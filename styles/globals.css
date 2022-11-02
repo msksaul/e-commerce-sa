@@ -632,6 +632,7 @@ margin-top: 160px;
   .footer-banner-container{
     height: 560px;
     margin-top: 80px;
+    overflow: hidden;
   }
   .footer-banner-image{
     width: 77%;
