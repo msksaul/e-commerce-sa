@@ -621,6 +621,7 @@ margin-top: 160px;
 @media screen and (max-width:800px) {
   .hero-banner-container{
     height: 560px;
+    overflow: hidden;
   }
   .hero-banner-image{
     width: 77%;
@@ -636,7 +637,7 @@ margin-top: 160px;
     width: 77%;
     left: 30%;
     top: 6%;
-    height: 56%
+    height: 56%;
   }
   .banner-desc .left h3{
     font-weight: 900;
@@ -710,54 +711,54 @@ margin-top: 160px;
     margin: 20px;
   }
 
-.item-desc .flex{
-  width: 200px;
-}
-.top{
-  flex-wrap: wrap;
-  gap: 10px;
+  .item-desc .flex{
+    width: 200px;
+  }
+  .top{
+    flex-wrap: wrap;
+    gap: 10px;
 
 
-}
-.item-desc .bottom{
-  margin-top: 30px;
-}
-.flex h5{
-  font-size: 16px;
-   color: #324d67;
-}
-.flex h4{
-  font-size: 16px;
-   color: black;
-}
-.cart-bottom{
-  padding: 30px;
-}
+  }
+  .item-desc .bottom{
+    margin-top: 30px;
+  }
+  .flex h5{
+    font-size: 16px;
+    color: #324d67;
+  }
+  .flex h4{
+    font-size: 16px;
+    color: black;
+  }
+  .cart-bottom{
+    padding: 30px;
+  }
 
-.total h3{
-  font-size: 20px;
-}
-.track {
-  animation: marquee 10s linear infinite;
-  width: 550%;
-}
-.success-wrapper, .cancel-wrapper{
- 
-  min-height: 69vh;
-}
-.success, .cancel {
-   width: 370px;
-  margin-top: 100px;
-  padding: 20px;
-}
-.success{
-  height: 350px;
-}
-.success h2{
-  font-size: 17px;
-}
-.btn-container{
-  width: 300px;
-  margin: auto;
-}
+  .total h3{
+    font-size: 20px;
+  }
+  .track {
+    animation: marquee 10s linear infinite;
+    width: 550%;
+  }
+  .success-wrapper, .cancel-wrapper{
+  
+    min-height: 69vh;
+  }
+  .success, .cancel {
+    width: 370px;
+    margin-top: 100px;
+    padding: 20px;
+  }
+  .success{
+    height: 350px;
+  }
+  .success h2{
+    font-size: 17px;
+  }
+  .btn-container{
+    width: 300px;
+    margin: auto;
+  }
 }
