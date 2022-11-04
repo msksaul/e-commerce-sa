@@ -508,7 +508,6 @@ padding: 30px 65px;
 }
 .buttons .buy-now{
   width: 200px;
-
   padding: 10px 20px;
   background-color: #f02d34;
   color: white;
@@ -523,6 +522,28 @@ padding: 30px 65px;
 .buttons .buy-now:hover{
   transform:scale(1.1,1.1)
 }
+
+.buttons .return{
+  padding: 10px 20px;
+  border: 1px solid #f02d34 ;
+  margin-top: 40px;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: white;
+  color: #f02d34;
+  cursor: pointer;
+  width: 100%;
+   transform: scale(1, 1);
+  transition: transform 0.5s ease;
+}
+.buttons .return:hover{
+  transform:scale(1.1,1.1)
+}
+
+.l-b {
+  width: 100%;
+}
+
 .quantity-desc{
   border: 1px solid gray;
 padding: 6px;
