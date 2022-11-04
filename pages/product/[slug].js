@@ -11,7 +11,7 @@ const ProductDetails = ({ product, products }) => {
   const { image, name, details, price } = product
 
   const [index, setIndex] = useState(0)
-  const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext()
+  const { decQty, incQty, qty, onAdd, setShowCart, setQty } = useStateContext()
 
   const handleBuyNow = () => {
     onAdd(product, qty)
@@ -78,8 +78,8 @@ const ProductDetails = ({ product, products }) => {
           </div>
           <div className='buttons'>
             <Link href='/' className='l-b'>
-              <button type='button' className='return'>
-                :: Return to Store
+              <button type='button' className='return' onClick={() => setQty(1)}>
+                Return to Store
               </button>
             </Link>
           </div>

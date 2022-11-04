@@ -10,6 +10,7 @@ const Success = () => {
   const { setCartItems, setTotalPrice, setTotalQuantities } = useStateContext()
 
   useEffect(() => {
+    localStorage.removeItem('basket')
     setCartItems([])
     setTotalPrice(0)
     setTotalQuantities(0)

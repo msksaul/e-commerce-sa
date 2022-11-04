@@ -10,6 +10,12 @@ export const StateContext = ({ children }) => {
   const [totalQuantities, setTotalQuantities] = useState(0)
   const [qty, setQty] = useState(1)
 
+  const updateBasket = (items, price, quantities) => {
+    localStorage.setItem('basket', JSON.stringify({
+      items, price, quantities
+    }))
+  }
+
   const onAdd = (product, quantity) => {
     const chechProductInCart = cartItems.find(item => item._id === product._id)
 
@@ -31,7 +37,12 @@ export const StateContext = ({ children }) => {
       setCartItems([...cartItems, {...product}])
     }
     toast.success(`${qty} ${product.name} added to the cart.`)
-    setQty(1)
+
+    updateBasket(
+      [...cartItems, {...product}],
+      totalPrice + product.price * quantity,
+      totalQuantities + quantity
+    )
   }
 
   const onRemove = (product) => {
@@ -40,6 +51,11 @@ export const StateContext = ({ children }) => {
     setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price * foundProduct.quantity)
     setTotalQuantities((prevTotalQuantities) => prevTotalQuantities - foundProduct.quantity)
     setCartItems(newCartItems)
+    updateBasket(
+      newCartItems,
+      totalPrice - foundProduct.price * foundProduct.quantity,
+      totalQuantities - foundProduct.quantity
+    )
   }
 
   const toggleCartItemQuantity = (id, value) => {
@@ -54,6 +70,11 @@ export const StateContext = ({ children }) => {
       setCartItems(newCartItems)
       setTotalPrice((prevTotalPrice) => prevTotalPrice + foundProduct.price)
       setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + 1)
+      updateBasket(
+        newCartItems,
+        totalPrice + foundProduct.price,
+        totalQuantities + 1
+      )
     }
     else if(value === 'dec'){
       if(foundProduct.quantity > 1) {
@@ -66,6 +87,11 @@ export const StateContext = ({ children }) => {
         setCartItems(newCartItems)
         setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price)
         setTotalQuantities((prevTotalQuantities) => prevTotalQuantities - 1)
+        updateBasket(
+          newCartItems,
+          totalPrice - foundProduct.price,
+          totalQuantities - 1
+        )
       }
     }
   }
@@ -97,7 +123,8 @@ export const StateContext = ({ children }) => {
         onRemove,
         setCartItems,
         setTotalPrice,
-        setTotalQuantities
+        setTotalQuantities,
+        setQty
       }}
     >
       {children}
